@@ -1,0 +1,62 @@
+{
+  "_source": {
+    "kind": "news",
+    "title": "정부, 경기 판단 '회복 흐름'에서 '견조한 성장세'로 상향",
+    "publisher": "연합뉴스 (한민족센터 게재)",
+    "publishedAt": "2026-11-13",
+    "url": "https://www.koreancenter.or.kr/news/articleView.html?idxno=1438882"
+  },
+  "_notes": {
+    "writtenBy": "Claude가 원문을 읽고 쓴 시험용 대본이다. 쇼더스가 만든 대본이 아니다.",
+    "intended": ["네 번째 문장은 절이 네 개인 긴 문장으로 일부러 썼다."]
+  },
+  "_expected": [
+    {
+      "item": "clarity.oneIdea",
+      "min": 4,
+      "why": "네 번째 문장은 절이 네 개다."
+    },
+    {
+      "item": "structure.stepOrder",
+      "equals": 0,
+      "why": "단계 순서를 지켰다."
+    }
+  ],
+  "scriptId": "sample-01-news-economy",
+  "language": "ko",
+  "structure": "basic",
+  "sentences": [
+    {
+      "text": "정부가 우리 경제를 보는 눈을 한 단계 올렸습니다.",
+      "type": "hook"
+    },
+    {
+      "text": "재정경제부는 11월 경제동향에서 경기 판단을 견조한 성장세로 바꿨습니다.",
+      "type": "context"
+    },
+    {
+      "text": "지난 5월부터 써 온 경기 회복 흐름보다 한 단계 높은 표현입니다.",
+      "type": "point"
+    },
+    {
+      "text": "10월 수출이 작년보다 93.7% 늘었고 설비투자도 늘어났지만 소비는 아직 완만하게 개선되고 있어서 정부는 수출과 투자를 근거로 들었습니다.",
+      "type": "point"
+    },
+    {
+      "text": "반도체 수출은 259%, 컴퓨터는 497%나 늘었습니다.",
+      "type": "example"
+    },
+    {
+      "text": "3분기 성장률도 1.0%로, 처음 전망한 0.3%의 세 배를 넘었습니다.",
+      "type": "point"
+    },
+    {
+      "text": "하지만 10월 물가는 2.8% 올랐고, 청년층 취업자는 4년째 줄고 있습니다.",
+      "type": "point"
+    },
+    {
+      "text": "정부도 물가와 고용 같은 민생 부담은 여전히 걱정된다고 밝혔습니다.",
+      "type": "closing"
+    }
+  ]
+}

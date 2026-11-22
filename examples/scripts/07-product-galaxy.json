@@ -1,0 +1,59 @@
+{
+  "_source": {
+    "kind": "product",
+    "title": "삼성, '갤S26 시리즈' 사전 판매 시작…\"저장 용량 두배로\"",
+    "publisher": "뉴시스",
+    "publishedAt": "2026-02-26",
+    "url": "https://www.newsis.com/view/NISX20260226_0003526974",
+    "note": "사전 판매 기간의 월은 기사 날짜를 기준으로 추정했다."
+  },
+  "_notes": {
+    "writtenBy": "Claude가 원문을 읽고 쓴 시험용 대본이다. 쇼더스가 만든 대본이 아니다.",
+    "intended": ["GB, TB 같은 영문 약어를 그대로 썼다."]
+  },
+  "_expected": [
+    {
+      "item": "format.ttsNotation",
+      "min": 1,
+      "why": "GB, TB 같은 영문 약어를 그대로 썼다."
+    },
+    {
+      "item": "structure.typeMatch",
+      "max": 1,
+      "why": "라벨을 구조에 맞게 붙였다. 경계가 애매한 문장 하나까지는 허용한다."
+    }
+  ],
+  "scriptId": "sample-07-product-galaxy",
+  "language": "ko",
+  "structure": "aida",
+  "sentences": [
+    {
+      "text": "갤럭시 S26, 사전 판매로 사면 저장 용량이 두 배가 됩니다.",
+      "type": "hook"
+    },
+    {
+      "text": "삼성전자가 갤럭시 S26 시리즈의 사전 판매를 2월 27일부터 3월 5일까지 진행합니다.",
+      "type": "context"
+    },
+    {
+      "text": "모델은 울트라, 플러스, 일반 세 가지이고, 정식 출시는 3월 11일입니다.",
+      "type": "point"
+    },
+    {
+      "text": "가격은 일반 모델 256GB가 125만 4천 원, 울트라 256GB가 179만 7천400원입니다.",
+      "type": "point"
+    },
+    {
+      "text": "사전 구매하면 256GB 모델을 512GB로 올려 줍니다.",
+      "type": "solution"
+    },
+    {
+      "text": "울트라 512GB를 사면 24만 2천 원만 더 내고 1TB로 바꿀 수 있습니다.",
+      "type": "example"
+    },
+    {
+      "text": "3월 5일 전에 삼성닷컴에서 사전 구매 혜택을 확인해 보세요.",
+      "type": "cta"
+    }
+  ]
+}

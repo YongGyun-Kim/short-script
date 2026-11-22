@@ -1,0 +1,71 @@
+# 대본 단위 판단을 판정기에 넣기 전에 임시 스크립트로 한 시험의 출력이다.
+# 예시 대본 10개(01~10)를 썼다. 판정기 코드가 아닌 임시 스크립트의 출력이라 다시 실행할 수 없다.
+# 각 줄: 대본 | 시간 | 입력 토큰 | 출력 토큰 | 생각 단계 글자 수 | 라벨의 단계 | 모델의 단계 | 불일치 | 화제 끊김 | 영향 | 지시어 | 훅 내용/해소 | 형식 문제
+
+=== 시험 1. qwen3.5:4b, 생각 끔, 단계를 번호로 답하게 함
+01-news-economy.json | 1.16s | in 626 | out 45 | 라벨 [0,1,1,1,1,1,1,2] | 모델 undefined | JSON 아님: [{"steps":[2,3,4,5,6,7],"topicBreaks":[],"impactSentences":[],"unclearReferences
+02-news-hubo.json | 1.19s | in 605 | out 51 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 undefined | JSON 아님: [{"steps":[2,3,4,5,5,5,5,7],"topicBreaks":[6],"impactSentences":[8],"unclearRefe
+03-info-heating.json | 1.17s | in 636 | out 50 | 라벨 [0,1,1,2,2,2,3,4] | 모델 undefined | JSON 아님: [{"steps":[2,3,4,5,6,7],"topicBreaks":[],"impactSentences":[0,6],"unclearReferen
+04-info-tax.json | 1.26s | in 633 | out 56 | 라벨 [0,0,1,2,2,2,2,3] | 모델 undefined | JSON 아님: [{"steps":[0,0,0,2,3,4,5,7],"topicBreaks":[],"impactSentences":[2,3,4,6],"unclea
+05-fun-animals.json | 1.22s | in 653 | out 50 | 라벨 [0,1,1,2,2,3,3,4] | 모델 undefined | JSON 아님: [{"steps":[0,1,2,3,4,5,6,7],"topicBreaks":[6],"impactSentences":[],"unclearRefer
+06-fun-joseon.json | 1.19s | in 581 | out 52 | 라벨 [0,1,1,1,1,1,1,2] | 모델 undefined | 
+07-product-galaxy.json | 1.16s | in 638 | out 49 | 라벨 [0,1,1,1,2,2,3] | 모델 undefined | 
+08-blog-nature.json | 1.3s | in 584 | out 59 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 undefined | JSON 아님: [{"steps":[2,3,4,5,6,7,8],"topicBreaks":[2,4,6],"impactSentences":[1,3,5,7],"unc
+09-community-daiso.json | 1.09s | in 531 | out 45 | 라벨 [0,1,2,3,3] | 모델 undefined | JSON 아님: [{"steps":[0,0,0,2,3],"topicBreaks":[4],"impactSentences":[3],"unclearReferences
+10-event-winter.json | 1.16s | in 618 | out 49 | 라벨 [0,1,1,1,2,1,1,2] | 모델 undefined | JSON 아님: [{"steps":[2,3,4,5,6,7,8,9],"topicBreaks":[],"impactSentences":[],unclearReferen
+
+=== 시험 2. gemma4:e4b, 생각 끔, 단계를 번호로 답하게 함
+01-news-economy.json | 5.3s | in 671 | out 91 | think 0 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,2,3,4,5,6,2] | 불일치 [2,3,4,5,6] | 끊김 [] | 영향 [7] | 지시어 [] | 훅 true/true | 
+02-news-hubo.json | 1.32s | in 657 | out 95 | think 0 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,1,2,3,4,5,6,7,2] | 불일치 [2,3,4,5,6,7] | 끊김 [5] | 영향 [] | 지시어 [] | 훅 true/true | 
+03-info-heating.json | 1.43s | in 672 | out 95 | think 0 | 라벨 [0,1,1,2,2,2,3,4] | 모델 [0,1,2,3,4,5,6,7] | 불일치 [2,3,4,5,6,7] | 끊김 [] | 영향 [0,6] | 지시어 [] | 훅 true/true | 
+04-info-tax.json | 1.54s | in 674 | out 111 | think 0 | 라벨 [0,0,1,2,2,2,2,3] | 모델 [0,1,2,3,4,5,6,2] | 불일치 [1,2,3,4,5,6,7] | 끊김 [] | 영향 [0,2,3,4,5,6] | 지시어 [] | 훅 true/true | 
+05-fun-animals.json | 1.65s | in 698 | out 91 | think 0 | 라벨 [0,1,1,2,2,3,3,4] | 모델 [0,1,2,3,2,5,6,4] | 불일치 [2,3,5,6] | 끊김 [6] | 영향 [] | 지시어 [] | 훅 true/true | 
+06-fun-joseon.json | 1.31s | in 616 | out 85 | think 0 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,2,2] | 불일치 [6] | 끊김 [] | 영향 [] | 지시어 [] | 훅 true/true | 
+07-product-galaxy.json | 1.42s | in 676 | out 95 | think 0 | 라벨 [0,1,1,1,2,2,3] | 모델 [0,1,2,3,4,5,3] | 불일치 [2,3,4,5] | 끊김 [] | 영향 [0,4,5] | 지시어 [] | 훅 true/true | 
+08-blog-nature.json | 1.41s | in 613 | out 95 | think 0 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,1,2,1,1,1,1,1,2] | 불일치 [2] | 끊김 [] | 영향 [3] | 지시어 [] | 훅 true/true | 
+09-community-daiso.json | 1.24s | in 562 | out 79 | think 0 | 라벨 [0,1,2,3,3] | 모델 [0,1,2,3,4] | 불일치 [4] | 끊김 [] | 영향 [3] | 지시어 [] | 훅 true/true | 
+10-event-winter.json | 1.37s | in 655 | out 91 | think 0 | 라벨 [0,1,1,1,2,1,1,2] | 모델 [0,1,1,1,2,1,1,2] | 불일치 [] | 끊김 [] | 영향 [4] | 지시어 [] | 훅 true/true | 
+합계 10번 호출, 모델 시간 18.0초, 입력 토큰 6494, 출력 토큰 928
+=== 시험 3. gpt-oss:20b, 생각 low, 단계를 번호로 답하게 함
+01-news-economy.json | 16.73s | in 1394 | out 48 | think 2035 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,2] | 불일치 [] | 끊김 [] | 영향 [6] | 지시어 [] | 훅 true/true | 
+02-news-hubo.json | 12.32s | in 1380 | out 50 | think 1822 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,1,2] | 불일치 [] | 끊김 [5] | 영향 [] | 지시어 [] | 훅 true/true | 
+03-info-heating.json | 12.34s | in 1363 | out 52 | think 1803 | 라벨 [0,1,1,2,2,2,3,4] | 모델 [0,1,1,2,2,2,3,4] | 불일치 [] | 끊김 [] | 영향 [0,2,6] | 지시어 [] | 훅 true/true | 
+04-info-tax.json | 9.99s | in 1214 | out 58 | think 1593 | 라벨 [0,0,1,2,2,2,2,3] | 모델 [0,0,1,2,2,2,2,2] | 불일치 [7] | 끊김 [] | 영향 [0,2,3,4,5,6] | 지시어 [] | 훅 true/true | 
+05-fun-animals.json | 13.98s | in 1509 | out 48 | think 2143 | 라벨 [0,1,1,2,2,3,3,4] | 모델 [0,1,1,2,2,2,1,4] | 불일치 [5,6] | 끊김 [6] | 영향 [] | 지시어 [] | 훅 true/true | 
+06-fun-joseon.json | 9.85s | in 1194 | out 50 | think 1632 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,2] | 불일치 [] | 끊김 [3,5] | 영향 [] | 지시어 [] | 훅 true/true | 
+07-product-galaxy.json | 6.07s | in 1026 | out 48 | think 959 | 라벨 [0,1,1,1,2,2,3] | 모델 [0,1,1,1,2,2,3] | 불일치 [] | 끊김 [] | 영향 [4,5] | 지시어 [] | 훅 true/true | 
+08-blog-nature.json | 14.69s | in 1466 | out 56 | think 2347 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,0,1,1,1,1,1,1,2] | 불일치 [1] | 끊김 [] | 영향 [3,5,7,8] | 지시어 [] | 훅 true/true | 
+09-community-daiso.json | 10.28s | in 1184 | out 41 | think 1871 | 라벨 [0,1,2,3,3] | 모델 [0,1,2,3,4] | 불일치 [4] | 끊김 [] | 영향 [] | 지시어 [] | 훅 true/true | 
+10-event-winter.json | 7.82s | in 1095 | out 50 | think 1312 | 라벨 [0,1,1,1,2,1,1,2] | 모델 [0,1,1,1,1,1,1,2] | 불일치 [4] | 끊김 [] | 영향 [4,6] | 지시어 [] | 훅 true/true | 
+합계 10번 호출, 모델 시간 114.1초, 입력 토큰 12825, 출력 토큰 501
+
+
+=== 시험 4. gemma4:e4b, 생각 끔, 단계를 이름으로 답하게 함
+01-news-economy.json | 5.88s | in 680 | out 111 | think 0 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,1] | 불일치 [7] | 끊김 [] | 영향 [6,7] | 지시어 [] | 훅 true/true | 
+02-news-hubo.json | 1.55s | in 666 | out 114 | think 0 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,1,2] | 불일치 [] | 끊김 [5] | 영향 [] | 지시어 [] | 훅 true/true | 
+03-info-heating.json | 1.62s | in 681 | out 114 | think 0 | 라벨 [0,1,1,2,2,2,3,4] | 모델 [0,1,1,2,2,2,3,4] | 불일치 [] | 끊김 [] | 영향 [1,2,6] | 지시어 [] | 훅 true/true | 
+04-info-tax.json | 1.71s | in 683 | out 126 | think 0 | 라벨 [0,0,1,2,2,2,2,3] | 모델 [0,1,1,2,2,2,2,3] | 불일치 [1] | 끊김 [] | 영향 [1,2,3,5,6] | 지시어 [] | 훅 true/true | 
+05-fun-animals.json | 1.53s | in 707 | out 107 | think 0 | 라벨 [0,1,1,2,2,3,3,4] | 모델 [0,1,1,2,2,2,3,4] | 불일치 [5] | 끊김 [6] | 영향 [] | 지시어 [] | 훅 true/true | 
+06-fun-joseon.json | 1.48s | in 625 | out 103 | think 0 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,2,2] | 불일치 [6] | 끊김 [] | 영향 [] | 지시어 [] | 훅 true/true | 
+07-product-galaxy.json | 1.53s | in 685 | out 105 | think 0 | 라벨 [0,1,1,1,2,2,3] | 모델 [0,1,1,1,2,2,3] | 불일치 [] | 끊김 [] | 영향 [4,5] | 지시어 [] | 훅 true/true | 
+08-blog-nature.json | 1.64s | in 622 | out 118 | think 0 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,1,2] | 불일치 [] | 끊김 [] | 영향 [3,5] | 지시어 [] | 훅 true/true | 
+09-community-daiso.json | 1.35s | in 571 | out 88 | think 0 | 라벨 [0,1,2,3,3] | 모델 [0,1,2,3,3] | 불일치 [] | 끊김 [] | 영향 [3] | 지시어 [] | 훅 true/true | 
+10-event-winter.json | 1.6s | in 664 | out 109 | think 0 | 라벨 [0,1,1,1,2,1,1,2] | 모델 [0,1,1,1,2,1,1,2] | 불일치 [] | 끊김 [] | 영향 [4] | 지시어 [] | 훅 true/true | 
+합계 10번 호출, 모델 시간 19.9초, 입력 토큰 6584, 출력 토큰 1095
+=== 시험 5. qwen3.5:4b, 생각 끔, 단계를 이름으로 답하게 함
+01-news-economy.json | 3.07s | in 634 | out 57 | think 0 | 라벨 [0,1,1,1,1,1,1,2] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["훅","본문","본문","본문","본문","본문","본문"],"topicBreaks":[],"impactSentences"
+02-news-hubo.json | 1.58s | in 613 | out 66 | think 0 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["훅","본문","본문","본문","본문","본문","본문","끝맺음"],"topicBreaks":[],"impactSent
+03-info-heating.json | 1.51s | in 644 | out 61 | think 0 | 라벨 [0,1,1,2,2,2,3,4] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["해결","문제","문제","문제","해결","예시","예시","끝맺음"],"topicBreaks":[],"impactSen
+04-info-tax.json | 1.31s | in 641 | out 49 | think 0 | 라벨 [0,0,1,2,2,2,2,3] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["문제","문제 심화","해결"],"topicBreaks":[],"impactSentences":[3,4,5,6],"uncl
+05-fun-animals.json | 1.34s | in 661 | out 48 | think 0 | 라벨 [0,1,1,2,2,3,3,4] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["훅","상황","사건","전환","교훈"],"topicBreaks":[3],"impactSentences":[],"uncl
+06-fun-joseon.json | 1.29s | in 589 | out 49 | think 0 | 라벨 [0,1,1,1,1,1,1,2] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["훅","항목","항목","항목","끝맺음"],"topicBreaks":[],"impactSentences":[],"uncl
+07-product-galaxy.json | 1.49s | in 646 | out 58 | think 0 | 라벨 [0,1,1,1,2,2,3] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["주의","행동","행동","행동","행동","행동","행동"]},{"topicBreaks":[],"impactSentenc
+08-blog-nature.json | 1.61s | in 592 | out 68 | think 0 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["훅","단계 1","단계 2","단계 2","단계 2","단계 2","단계 2","끝맺음"],"topicBreaks":[]
+09-community-daiso.json | 1.33s | in 539 | out 49 | think 0 | 라벨 [0,1,2,3,3] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["문제","문제","해결","결과","끝맺음"]},{"topicBreaks":[],"impactSentences":[3],"
+10-event-winter.json | 1.39s | in 626 | out 60 | think 0 | 라벨 [0,1,1,1,2,1,1,2] | 모델 undefined | 불일치 [] | 끊김 undefined | 영향 undefined | 지시어 undefined | 훅 undefined/undefined | JSON 아님: [{"steps":["훅","본문","본문","본문","본문","본문","본문","끝맺음"],"topicBreaks":[],"impactSent
+합계 10번 호출, 모델 시간 15.9초, 입력 토큰 6185, 출력 토큰 565
+=== 시험 6. qwen3.5:4b, 생각 켬, 단계를 이름으로 답하게 함 (첫 대본에서 8분이 넘도록 답이 없어 멈춤)
+01-news-economy.json | 127.06s | in 7915 | out 84 | think 27629 | 라벨 [0,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,1] | 불일치 [7] | 끊김 [] | 영향 [6] | 지시어 [] | 훅 true/true | 
+02-news-hubo.json | 101.92s | in 6869 | out 109 | think 23868 | 라벨 [0,1,1,1,1,1,1,1,2] | 모델 [0,1,1,1,1,1,1,1,2] | 불일치 [] | 끊김 [] | 영향 [] | 지시어 [] | 훅 true/true | 
+03-info-heating.json | 139.28s | in 9167 | out 106 | think 30991 | 라벨 [0,1,1,2,2,2,3,4] | 모델 [0,1,1,2,3,3,3,4] | 불일치 [4,5] | 끊김 [] | 영향 [0,6] | 지시어 [] | 훅 true/true | 
+

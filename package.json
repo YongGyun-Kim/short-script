@@ -1,0 +1,34 @@
+{
+  "name": "short-script",
+  "version": "0.1.0",
+  "private": true,
+  "description": "쇼츠 대본 품질 판정기",
+  "type": "module",
+  "scripts": {
+    "setup": "node scripts/setup-kiwi-model.ts",
+    "pipeline": "node scripts/pipeline.ts",
+    "judge": "node src/cli.ts",
+    "check-samples": "node scripts/check-samples.ts",
+    "compare-models": "node scripts/compare-models.ts",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YongGyun-Kim/short-script.git"
+  },
+  "dependencies": {
+    "kiwi-nlp": "0.25.0",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "prettier": "3.10.1",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": ">=22.18"
+  }
+}

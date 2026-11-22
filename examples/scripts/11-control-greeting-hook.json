@@ -1,0 +1,49 @@
+{
+  "_source": {
+    "kind": "control",
+    "title": "03번 대본의 훅만 인사로 바꾼 대조 대본",
+    "publisher": "대한민국 정책브리핑 (정책기자단)",
+    "publishedAt": "2025-12-18",
+    "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148956664"
+  },
+  "_notes": {
+    "writtenBy": "Claude가 쓴 시험용 대본이다. 쇼더스가 만든 대본이 아니다.",
+    "intended": ["훅을 내용 없는 인사로 썼다. 나머지는 03번 대본과 같은 내용이다."]
+  },
+  "_expected": [
+    {
+      "item": "interest.hookQuestion",
+      "equals": 0,
+      "why": "첫 문장이 인사와 예고뿐이다."
+    }
+  ],
+  "scriptId": "sample-11-control-greeting-hook",
+  "language": "ko",
+  "structure": "problem-solution",
+  "sentences": [
+    {
+      "text": "안녕하세요, 여러분! 오늘도 유익한 정보를 가지고 왔어요.",
+      "type": "hook"
+    },
+    {
+      "text": "겨울마다 난방비 고지서를 보고 놀라신 적 있으시죠?",
+      "type": "problem"
+    },
+    {
+      "text": "기후에너지환경부는 겨울철 실내 온도를 20도로 유지하라고 권합니다.",
+      "type": "solution"
+    },
+    {
+      "text": "수면양말이나 내복을 입으면 체감 온도가 3도쯤 올라갑니다.",
+      "type": "solution"
+    },
+    {
+      "text": "보온 옷만 잘 챙겨도 한 달에 약 1만 300원을 아낄 수 있다고 합니다.",
+      "type": "example"
+    },
+    {
+      "text": "오늘 저녁, 보일러 온도부터 20도로 맞춰 보세요.",
+      "type": "cta"
+    }
+  ]
+}

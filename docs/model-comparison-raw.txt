@@ -1,0 +1,62 @@
+# 명령: node scripts/compare-models.ts gemma4:e4b qwen3.5:4b qwen3.5:2b gpt-oss:20b=low
+# 판정기 0.4.0, Ollama 0.31.1, Apple M5 Pro, 메모리 48GB
+
+##### ollama gemma4:e4b@dc35e8d9c606
+01-news-economy.json | 1.22초 | 라벨과 다른 단계 [7] | 화제 끊김 [] | 영향 [6,7] | 지시어 [] | 훅 내용 true | 훅 해소 true
+02-news-hubo.json | 1.23초 | 라벨과 다른 단계 [] | 화제 끊김 [5] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+03-info-heating.json | 1.26초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [1,2,6] | 지시어 [] | 훅 내용 true | 훅 해소 true
+04-info-tax.json | 1.36초 | 라벨과 다른 단계 [1] | 화제 끊김 [] | 영향 [1,2,3,5,6] | 지시어 [] | 훅 내용 true | 훅 해소 true
+05-fun-animals.json | 1.23초 | 라벨과 다른 단계 [5] | 화제 끊김 [6] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+06-fun-joseon.json | 1.16초 | 라벨과 다른 단계 [6] | 화제 끊김 [] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+07-product-galaxy.json | 1.17초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [4,5] | 지시어 [] | 훅 내용 true | 훅 해소 true
+08-blog-nature.json | 1.32초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [3,5] | 지시어 [] | 훅 내용 true | 훅 해소 true
+09-community-daiso.json | 1.04초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [3] | 지시어 [] | 훅 내용 true | 훅 해소 true
+10-event-winter.json | 1.19초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [4] | 지시어 [] | 훅 내용 true | 훅 해소 true
+11-control-greeting-hook.json | 1.11초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [3,4] | 지시어 [] | 훅 내용 false | 훅 해소 true
+12-control-hook-mismatch.json | 1.11초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [3,4] | 지시어 [] | 훅 내용 true | 훅 해소 true
+대본 12개 | 첫 답의 형식 오류 0 | 라벨과 다른 단계 4/90문장 | 두 번 보낸 답이 다른 대본 0 | 대본당 1.20초 | 입력 토큰 7824 | 출력 토큰 1293
+
+##### ollama qwen3.5:4b@d8b0f5e9760c
+01-news-economy.json | 형식 오류: JSON이 아니다: [{"steps":["훅","본문","본문","본문","본문","본문","본문"],"topicBreaks":[],"impactSentences"
+02-news-hubo.json | 형식 오류: JSON이 아니다: [{"steps":["훅","본문","본문","본문","본문","본문","본문","끝맺음"],"topicBreaks":[],"impactSent
+03-info-heating.json | 형식 오류: JSON이 아니다: [{"steps":["해결","문제","문제","문제","해결","예시","예시","끝맺음"],"topicBreaks":[],"impactSen
+04-info-tax.json | 형식 오류: JSON이 아니다: [{"steps":["문제","문제 심화","해결"],"topicBreaks":[],"impactSentences":[3,4,5,6],"uncl
+05-fun-animals.json | 형식 오류: JSON이 아니다: [{"steps":["훅","상황","사건","전환","교훈"],"topicBreaks":[3],"impactSentences":[],"uncl
+06-fun-joseon.json | 형식 오류: JSON이 아니다: [{"steps":["훅","항목","항목","항목","끝맺음"],"topicBreaks":[],"impactSentences":[],"uncl
+07-product-galaxy.json | 형식 오류: JSON이 아니다: [{"steps":["주의","행동","행동","행동","행동","행동","행동"]},{"topicBreaks":[],"impactSentenc
+08-blog-nature.json | 형식 오류: JSON이 아니다: [{"steps":["훅","단계 1","단계 2","단계 2","단계 2","단계 2","단계 2","끝맺음"],"topicBreaks":[]
+09-community-daiso.json | 형식 오류: JSON이 아니다: [{"steps":["문제","문제","해결","결과","끝맺음"]},{"topicBreaks":[],"impactSentences":[3],"
+10-event-winter.json | 형식 오류: JSON이 아니다: [{"steps":["훅","본문","본문","본문","본문","본문","본문","끝맺음"],"topicBreaks":[],"impactSent
+11-control-greeting-hook.json | 형식 오류: JSON이 아니다: [{"steps":["문제","해결"],"topicBreaks":[],"impactSentences":[3,4],"unclearReference
+12-control-hook-mismatch.json | 형식 오류: JSON이 아니다: [{"steps":["주의","행동","행동","행동","행동","행동"]},{"topicBreaks":[],"impactSentences":[
+대본 12개 | 첫 답의 형식 오류 12 | 라벨과 다른 단계 0/0문장 | 두 번 보낸 답이 다른 대본 0 | 대본당 1.24초 | 입력 토큰 7355 | 출력 토큰 660
+
+##### ollama qwen3.5:2b@0689d44085e0
+01-news-economy.json | 형식 오류: steps의 길이가 문장 수 8와 다르다.
+02-news-hubo.json | 형식 오류: steps의 길이가 문장 수 9와 다르다.
+03-info-heating.json | 형식 오류: steps의 길이가 문장 수 8와 다르다.
+04-info-tax.json | 형식 오류: steps의 길이가 문장 수 8와 다르다.
+05-fun-animals.json | 형식 오류: steps의 길이가 문장 수 8와 다르다.
+06-fun-joseon.json | 형식 오류: steps의 길이가 문장 수 8와 다르다.
+07-product-galaxy.json | 형식 오류: steps의 길이가 문장 수 7와 다르다.
+08-blog-nature.json | 형식 오류: steps의 길이가 문장 수 9와 다르다.
+09-community-daiso.json | 형식 오류: steps의 길이가 문장 수 5와 다르다.
+10-event-winter.json | 형식 오류: steps의 길이가 문장 수 8와 다르다.
+11-control-greeting-hook.json | 형식 오류: steps의 길이가 문장 수 6와 다르다.
+12-control-hook-mismatch.json | 형식 오류: steps의 길이가 문장 수 6와 다르다.
+대본 12개 | 첫 답의 형식 오류 12 | 라벨과 다른 단계 0/0문장 | 두 번 보낸 답이 다른 대본 0 | 대본당 0.93초 | 입력 토큰 7355 | 출력 토큰 787
+
+##### ollama gpt-oss:20b@17052f91a42e (think=low)
+01-news-economy.json | 4.70초 | 라벨과 다른 단계 [7] | 화제 끊김 [] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+02-news-hubo.json | 7.40초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+03-info-heating.json | 12.11초 | 라벨과 다른 단계 [0,4,5] | 화제 끊김 [] | 영향 [0,2,6] | 지시어 [] | 훅 내용 true | 훅 해소 true
+04-info-tax.json | 17.69초 | 라벨과 다른 단계 [] | 화제 끊김 [3] | 영향 [2,3,4,5,6] | 지시어 [] | 훅 내용 true | 훅 해소 true
+05-fun-animals.json | 12.42초 | 라벨과 다른 단계 [5] | 화제 끊김 [6] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+06-fun-joseon.json | 7.34초 | 라벨과 다른 단계 [0] | 화제 끊김 [3,5] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+07-product-galaxy.json | 6.41초 | 라벨과 다른 단계 [] | 화제 끊김 [] | 영향 [4,5] | 지시어 [] | 훅 내용 true | 훅 해소 true
+08-blog-nature.json | 8.65초 | 라벨과 다른 단계 [0] | 화제 끊김 [] | 영향 [3] | 지시어 [] | 훅 내용 true | 훅 해소 true
+09-community-daiso.json | 7.54초 | 라벨과 다른 단계 [0,4] | 화제 끊김 [] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+10-event-winter.json | 10.93초 | 라벨과 다른 단계 [4] | 화제 끊김 [] | 영향 [] | 지시어 [] | 훅 내용 true | 훅 해소 true
+11-control-greeting-hook.json | 6.96초 | 라벨과 다른 단계 [0,4] | 화제 끊김 [] | 영향 [1,4] | 지시어 [] | 훅 내용 false | 훅 해소 true
+12-control-hook-mismatch.json | 10.67초 | 라벨과 다른 단계 [] | 화제 끊김 [1] | 영향 [3,4] | 지시어 [] | 훅 내용 true | 훅 해소 false
+대본 12개 | 첫 답의 형식 오류 0 | 라벨과 다른 단계 12/90문장 | 두 번 보낸 답이 다른 대본 7 | 대본당 9.40초 | 입력 토큰 14452 | 출력 토큰 695

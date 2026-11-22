@@ -1,0 +1,52 @@
+{
+  "_source": {
+    "kind": "control",
+    "title": "07번 대본의 훅을 본문과 맞지 않는 질문으로 바꾼 대조 대본",
+    "publisher": "뉴시스",
+    "publishedAt": "2026-02-26",
+    "url": "https://www.newsis.com/view/NISX20260226_0003526974"
+  },
+  "_notes": {
+    "writtenBy": "Claude가 쓴 시험용 대본이다. 쇼더스가 만든 대본이 아니다.",
+    "intended": [
+      "훅은 카메라가 무엇이 달라졌는지 묻지만, 본문은 사전 판매 일정과 혜택만 말한다.",
+      "원문에 카메라 정보가 없어서 본문에도 카메라 내용을 넣지 않았다."
+    ]
+  },
+  "_expected": [
+    {
+      "item": "interest.hookPayoff",
+      "equals": 0,
+      "why": "훅은 카메라를 묻는데 본문은 사전 판매 일정과 혜택만 말한다."
+    }
+  ],
+  "scriptId": "sample-12-control-hook-mismatch",
+  "language": "ko",
+  "structure": "aida",
+  "sentences": [
+    {
+      "text": "갤럭시 S26의 카메라는 무엇이 달라졌을까요?",
+      "type": "hook"
+    },
+    {
+      "text": "삼성전자가 갤럭시 S26 시리즈의 사전 판매를 2월 27일부터 3월 5일까지 진행합니다.",
+      "type": "context"
+    },
+    {
+      "text": "모델은 울트라, 플러스, 일반 세 가지이고, 정식 출시는 3월 11일입니다.",
+      "type": "point"
+    },
+    {
+      "text": "사전 구매하면 저장 용량을 두 배로 올려 줍니다.",
+      "type": "solution"
+    },
+    {
+      "text": "울트라 모델은 24만 2천 원만 더 내면 가장 큰 용량으로 바꿀 수 있습니다.",
+      "type": "example"
+    },
+    {
+      "text": "3월 5일 전에 삼성닷컴에서 사전 구매 혜택을 확인해 보세요.",
+      "type": "cta"
+    }
+  ]
+}

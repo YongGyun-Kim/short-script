@@ -1,0 +1,67 @@
+{
+  "_source": {
+    "kind": "event",
+    "title": "초대형 겨울축제 시작! 서울윈터페스타 개막식 라인업 공개",
+    "publisher": "서울시 '내 손안에 서울'",
+    "publishedAt": "2025-12-11",
+    "url": "https://mediahub.seoul.go.kr/archives/2016467",
+    "note": "2025년 행사의 안내 글이다. 2026년 행사가 아니다."
+  },
+  "_notes": {
+    "writtenBy": "Claude가 원문을 읽고 쓴 시험용 대본이다. 쇼더스가 만든 대본이 아니다.",
+    "intended": [
+      "다섯 번째 문장에 행동 유도를 넣고 그 뒤에 본문 문장을 이어서 단계 순서를 일부러 어겼다.",
+      "DDP라는 영문 약어를 그대로 썼다."
+    ]
+  },
+  "_expected": [
+    {
+      "item": "structure.stepOrder",
+      "equals": 2,
+      "includes": [5, 6],
+      "why": "행동 유도 뒤에 본문 문장이 두 개 이어진다."
+    },
+    {
+      "item": "format.ttsNotation",
+      "min": 1,
+      "why": "DDP라는 영문 약어를 썼다."
+    }
+  ],
+  "scriptId": "sample-10-event-winter",
+  "language": "ko",
+  "structure": "basic",
+  "sentences": [
+    {
+      "text": "서울 도심 여섯 곳이 한꺼번에 겨울 축제장이 됩니다.",
+      "type": "hook"
+    },
+    {
+      "text": "2025 서울윈터페스타가 12월 12일부터 1월 4일까지 열립니다.",
+      "type": "context"
+    },
+    {
+      "text": "광화문광장부터 청계천, 서울광장, DDP, 보신각, 우이천까지 이어집니다.",
+      "type": "point"
+    },
+    {
+      "text": "개막식은 12월 12일 저녁 7시, 광화문광장 특설무대에서 열립니다.",
+      "type": "point"
+    },
+    {
+      "text": "올겨울 데이트 코스로 꼭 기억해 두세요.",
+      "type": "cta"
+    },
+    {
+      "text": "시민합창단 180여 명이 객석에서 무대로 걸어 나오는 공연도 준비됐습니다.",
+      "type": "point"
+    },
+    {
+      "text": "12월 27일에는 자는 동안의 심박으로 순위를 정하는 겨울잠자기대회도 열립니다.",
+      "type": "example"
+    },
+    {
+      "text": "도심 곳곳에서 빛과 공연이 이어지는 축제, 놓치지 마세요.",
+      "type": "closing"
+    }
+  ]
+}
